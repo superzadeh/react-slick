@@ -21,7 +21,7 @@ var helpers = {
       slideWidth = this.getWidth(ReactDOM.findDOMNode(this));
     }
 
-    const slideHeight = this.getHeight(slickList.querySelector('[data-index="0"]'));
+    const slideHeight = this.getHeight(slickList.querySelector('[data-index="0"]')) || props.height;
     const listHeight = slideHeight * props.slidesToShow;
 
     var currentSlide = props.rtl ? slideCount - 1 - props.initialSlide : props.initialSlide;
@@ -96,12 +96,12 @@ var helpers = {
   getWidth: function getWidth(elem) {
     if (elem) {
       return elem.getBoundingClientRect().width || elem.offsetWidth;
-    };
+    }
   },
   getHeight(elem) {
     if (elem) {
       return elem.getBoundingClientRect().height || elem.offsetHeight;
-    };
+    }
   },
   adaptHeight: function () {
     if (this.props.adaptiveHeight) {
