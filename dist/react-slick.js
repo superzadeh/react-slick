@@ -313,7 +313,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
 	    if (this.props.slickGoTo != nextProps.slickGoTo) {
-	      if ((undefined) !== 'production') {
+	      if (true) {
 	        console.warn('react-slick deprecation warning: slickGoTo prop is deprecated and it will be removed in next release. Use slickGoTo method instead');
 	      }
 	      this.changeSlide({
@@ -1113,7 +1113,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      slideWidth = this.getWidth(_reactDom2.default.findDOMNode(this));
 	    }
 
-	    var slideHeight = this.getHeight(slickList.querySelector('[data-index="0"]'));
+	    var slideHeight = this.getHeight(slickList.querySelector('[data-index="0"]')) || props.height;
 	    var listHeight = slideHeight * props.slidesToShow;
 
 	    var currentSlide = props.rtl ? slideCount - 1 - props.initialSlide : props.initialSlide;
@@ -1188,12 +1188,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	  getWidth: function getWidth(elem) {
 	    if (elem) {
 	      return elem.getBoundingClientRect().width || elem.offsetWidth;
-	    };
+	    }
 	  },
 	  getHeight: function getHeight(elem) {
 	    if (elem) {
 	      return elem.getBoundingClientRect().height || elem.offsetHeight;
-	    };
+	    }
 	  },
 
 	  adaptHeight: function adaptHeight() {
